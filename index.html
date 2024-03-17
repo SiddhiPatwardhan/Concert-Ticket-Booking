@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concert Booking</title>
+</head>
+
+<body>
+    <div class="myname">
+        <h1>Concert Ticket Booking</h1>
+    </div>
+
+    <div class="parent">
+        <div class="img">
+            <img src="images/cb1.png" alt="sid">
+
+        </div>
+    </div>
+
+    <div class="txt">
+        <h2> Grab all amazing concert tickets and get to know more about it
+        </h2>
+    </div>
+
+    <div class="txt1">
+        <h2> Here are all upcoming concerts </h2>
+    </div>
+
+    <div class="parent">
+        <div class="img">
+            <img src="images/cb2.png" alt="sid">
+
+        </div>
+    </div>
+
+    <div class="txt2">
+        <h2> Sunburn Holi Weekend Ft. Marshmello - Mumbai</h2>
+    </div>
+
+    <div class="txt3">
+        <pre> Sun 24 March 2024 at 4pm
+MMRD Grounds: Mumbai
+        </pre>
+    </div>
+
+    <div class="parent">
+        <div class="img">
+            <img src="images/cb3.png" alt="sid">
+
+        </div>
+    </div>
+
+    <div class="txt4">
+        <h2> Ed Sheeran: +–=÷× 2024 India Tour </h2>
+    </div>
+
+    <div class="txt5">
+        <pre>
+            Sun 17 March 2024 at 7pm
+            Mahalakshmi race course:Mumbai
+        </pre>
+    </div>
+
+    <div class="txt6">
+        <h2> For Further Bookings Fill The Following Details :-</h2>
+    </div>
+
+    <div class="textfield">
+        <label for="textfield">
+            Concert Name :
+        </label>
+        <input type="text" name="textfield" placeholder="Enter concert name which u wanna book">
+    </div>
+
+    <title>Calculate Total Amount</title>
+    </style>
+
+    <script>
+
+        function calculateTotal() {
+            var numTickets = parseInt(document.getElementById("quantity").value);
+
+            var ticketPrice = 0;
+
+            var vipTicket = document.getElementById("tickettype1").checked;
+            var earlybirdTicket = document.getElementById("tickettype2").checked;
+            var generalTicket = document.getElementById("tickettype3").checked;
+
+            if (vipTicket) {
+                ticketPrice += 500; // Assuming VIP ticket price is 500 Rs
+            }
+            if (earlybirdTicket) {
+                ticketPrice += 400; // Assuming Earlybird ticket price is 400 Rs
+            }
+            if (generalTicket) {
+                ticketPrice += 300; // Assuming General Admission ticket price is 300 Rs
+            }
+
+            var totalAmount = numTickets * ticketPrice;
+
+
+            document.getElementById("totalAmount").innerText = "Total Amount to be Paid: " + totalAmount + " Rs";
+            document.getElementById("totalAmount").classList.add("center");
+        }
+
+    </script>
+
+
+
+
+    <div class="txt7">
+        <h3>Number of tickets</h3>
+        <label for="quantity">Number of People (between 1 and 10):</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="10">
+    </div>
+
+    <div class="txt7">
+        <h3>Type of ticket</h3>
+        <input type="checkbox" name="Select ticket type" id="tickettype1" class="txt7">
+        <label for="tickettype1">VIP Tickets</label><br>
+        <input type="checkbox" name="Select ticket type" id="tickettype2" class="txt7">
+        <label for="tickettype2">Earlybird Tickets</label><br>
+        <input type="checkbox" name="Select ticket type" id="tickettype3" class="txt7">
+        <label for="tickettype3">General Admission Ticket</label><br>
+    </div>
+
+    <div class="txt8">
+        <h2> Total Amount to be Paid</h2>
+    </div>
+
+    <button class="button" onclick="calculateTotal()">Calculate Total</button><br><br>
+
+    <p id="totalAmount"></p>
+
+    <script>
+        function bookNow() {
+            // Perform booking operations here
+
+            // Display success message
+            document.getElementById("message").innerText = "Booking done successfully!";
+            document.getElementById("message").classList.add("center");
+
+        }
+    </script>
+
+    <button class="button" onclick="bookNow()">Book Now!</button>
+
+    <p id="message"></p>
+    <div class="txt9">
+        <h3> Your ticket booking experience </h3>
+        <i><textarea name="explain " id="explain" cols="30" rows="10"
+                placeholder="Explain your ticket booking experience "></textarea></i>
+    </div>
+    <div class="txt10">
+        <select name="star" id="star">
+            <option value="no star"> Select your star</option>
+            <option value="one1">One</option>
+            <option value="one2">Two</option>
+            <option value="one3">Three</option>
+        </select>
+    </div>
+
+
+
+
+
+    <div></div>
+</body>
+
+</html>
